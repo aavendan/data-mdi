@@ -23,6 +23,6 @@
 * [dumps1.csv](Rumours/dumps1.csv) Contiene los datos de los tweets entre los días 2019-05-24 y 2019-06-04. Se utilizaron las claves _"#Temblor #Sismo #Terremoto perdida mortal reportan derrumbes desprendimiento enorme grieta loreto #TerremotoPeru Consecuencias Terremoto Región  #Loreto #Peru #Fallecimiento  Bebe  Causa Movimiento #teluricos Solidaridad Selva Peruana #Temblor #Sismo #Terremoto Bebé Falso Desmintio Corroborar fuentes #Temblor epicentro  Zamora Chinchipe  Perú  fuentes oficiales  verdad"_
 
   * *Metadata:* username|to|text|retweets|favorites|replies|id|permalink|author_id|date|formatted_date|mentions|hashtags|geo|urls
-* [dump1_peru.csv](Rumours/dump1_peru.csv) Contiene los datos de los tweets entre los días 2019-05-24 y 2019-06-04. Corresponden a los tweets de *dumps1.csv* que contienen el texto _"Peru" o "peru" o "Perú" o "Peru"_
+* [comments2.csv](Rumours/comments2.csv) Contiene los datos de los comentarios a los tweets entre los días 2019-05-24 y 2019-06-04. Corresponden a los tweets de *dumps1.csv*
 
-  * *Metadata:* username|to|text|retweets|favorites|replies|id|permalink|author_id|date|formatted_date|mentions|hashtags|geo|urls
+  * *Metadata:* id_original|user|username|hour|date|text
