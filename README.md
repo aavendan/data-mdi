@@ -17,6 +17,8 @@
   * *wh* Retweets con texto
   * *wo* Retweets sin texto
   * *Metadata:* id retweet usuario|usuario|hora - fecha|#|texto
+ 
+* [CuentasValidas y CuentasValidasConUsuarios](EchoChambers/) Contienen las cuentas con una validez de 6 meses y las cuentas con sus seguidores.
 
 ## Rumours
 
