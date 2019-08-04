@@ -20,6 +20,16 @@
  
 * [CuentasValidas y CuentasValidasConUsuarios](EchoChambers/) Contienen las cuentas con una validez de 6 meses y las cuentas con sus seguidores.
 
+* [UsuariosSeguidores](EchoChambers/) Contienen una validacion de que los seguidores de la cuentas que estan en el archivo "cuentasvalidas" se encuentren en este mimos archivo.
+
+* [TOTvPoli](EchoChambers/) contiene el numero de tweets totales que el usuario hizo vs los tweets con contenido politico
+ *numero de tweets totales obtenido del archivo *wo* Retweets sin texto - tweets "politicos" del mismo archivo aplicando filtro por palabras clave
+ * *Metadata:* usuario|tweets totales|tweets politicos|
+ 
+
+
+
+
 ## Rumours
 
 * [dump1.csv](Rumours/dump1.csv) Contiene los datos de los tweets entre los días 2019-05-24 y 2019-06-04. Se utilizaron las claves _"#Temblor #Sismo #Terremoto perdida mortal reportan derrumbes desprendimiento enorme grieta loreto #TerremotoPeru Consecuencias Terremoto Región  #Loreto #Peru #Fallecimiento  Bebe  Causa Movimiento #teluricos Solidaridad Selva Peruana #Temblor #Sismo #Terremoto Bebé Falso Desmintio Corroborar fuentes #Temblor epicentro  Zamora Chinchipe  Perú  fuentes oficiales  verdad"_
