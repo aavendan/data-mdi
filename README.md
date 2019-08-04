@@ -27,9 +27,6 @@
  * *Metadata:* usuario|tweets totales|tweets politicos|
  
 
-
-
-
 ## Rumours
 
 * [dump1.csv](Rumours/dump1.csv) Contiene los datos de los tweets entre los días 2019-05-24 y 2019-06-04. Se utilizaron las claves _"#Temblor #Sismo #Terremoto perdida mortal reportan derrumbes desprendimiento enorme grieta loreto #TerremotoPeru Consecuencias Terremoto Región  #Loreto #Peru #Fallecimiento  Bebe  Causa Movimiento #teluricos Solidaridad Selva Peruana #Temblor #Sismo #Terremoto Bebé Falso Desmintio Corroborar fuentes #Temblor epicentro  Zamora Chinchipe  Perú  fuentes oficiales  verdad"_
@@ -38,3 +35,8 @@
 * [comments2.csv](Rumours/comments2.csv) Contiene los datos de los comentarios a los tweets entre los días 2019-05-24 y 2019-06-04. Corresponden a los tweets de *dumps1.csv*
 
   * *Metadata:* id_original|user|username|hour|date|text
+  
+## Instagram accounts
+
+* [InstagramAccounts](InstagramAccounts/ResumenCuentas.xlsx) Cuentas de IG con información de perfiles de tiendas virtuales.
+  * *Metadata:*
