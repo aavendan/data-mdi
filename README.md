@@ -1,4 +1,4 @@
-# Twitter data
+# MDI Data
 
 
 ## Echo Chambers
