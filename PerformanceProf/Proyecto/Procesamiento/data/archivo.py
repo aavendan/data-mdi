@@ -1,6 +1,6 @@
 import funciones as fn
 import os
-
+import json
 #Credenciales API SentiDetector
 '''
 curl -X POST -u "apikey:HGQfgUKC9Fqzjd1ByZlA2SUeovZaAz0G-veawWHILSLj" \
@@ -13,9 +13,9 @@ curl -X POST -u "apikey:HGQfgUKC9Fqzjd1ByZlA2SUeovZaAz0G-veawWHILSLj" \
 rutaParcial = "../detalle/"
 dicc = {}
 cantComents = 0
-
+limite = 0
 print("Cargando y limpiando comentarios. . .")
-'''
+
 for nombreArchivo in os.listdir(rutaParcial):
 
     rutaCompleta = os.path.join(rutaParcial, nombreArchivo)
@@ -31,8 +31,7 @@ for nombreArchivo in os.listdir(rutaParcial):
     profesor = archivo.readline().replace(",", " ").replace("\n", "")
 
     if anio == "2018":
-        # Comentario
-        # Linea para salta los especios para llegar al primer comentario
+
         archivo.readline()
         archivo.readline()
 
@@ -41,22 +40,50 @@ for nombreArchivo in os.listdir(rutaParcial):
 
         for comentario in comentarios:
             comentario = comentario.replace("\n", "")
-            if len(comentario) > 0:
-                # 1.Filto las Stopwords
-
-                # 2.Sepracion de palabras
-                comentsLimpios.append(fn.separarPalabras(comentario))
-
-        if len(comentsLimpios) > 0:
+            if len(comentario) > 6:
+                cm =fn.separarPalabras(comentario)
+                if len(cm) > 6:
+                    comentsLimpios.append(cm)
+        limite += len(comentsLimpios)
+        if len(comentsLimpios) > 1 and limite < 15:
             cantComents += len(comentsLimpios)
-            dicc = fn.llenarDiccionario(profesor, codigoMat, termino, anio, comentsLimpios, dicc)
-'''
-#print(fn.traducir("Hello World!"))
 
-print(fn.tra())
+            dicComents = fn.dicSentiComents(comentsLimpios)
+
+
+            dicc = fn.llenarDiccionario(profesor, codigoMat, termino, anio, dicComents, dicc)
+
+
+j = {"outputs":[{"output":"Hello world!","stats":{"elapsed_time":318,"nb_characters":11,"nb_tokens":3,"nb_tus":1,"nb_tus_failed":0}}]}
+
+print(dicc)
+
+#print(fn.traducir(["Hola mundo!", "Segunda prueba"]))
 #print(dicc.get("ROCÍO ELIZABETH MERA SUÁREZ"))
-print("Cantidad de comentarios dle 2018: " + str(cantComents))
+#print("Cantidad de comentarios dle 2018: " + str(cantComents))
 
 
 #Tambien se puede simplicar palabras como muuuuy a muy
 #sin embargo creo que esto si es significativo para nuestro estudio
+
+'''
+comentsTrad = fn.traducir(comentsLimpios)
+            dicComents = {}
+
+            for i in range(len(comentsTrad["outputs"])):
+
+                coment = comentsTrad["outputs"][i]["output"]
+
+                print("Comentario traducido a analizar: " + coment)
+                print("\n")
+                
+                dicSenti = fn.detectasSentimientos(coment)
+                limite += 1
+                dicTonoComent = {}
+
+                for dicTono in dicSenti["document_tone"]["tones"]:
+                    dicTonoComent[dicTono["tone_name"]] = dicTono["score"]
+
+                dicComents[coment] = dicTonoComent
+
+'''

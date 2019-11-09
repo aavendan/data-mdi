@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13fc21e6-88e5-4086-af4a-7ca2a2405949" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Procesamiento.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Procesamiento.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/archivo.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/archivo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/funciones.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/funciones.py" afterDir="false" />
@@ -22,7 +21,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="1SiEAD6iB7C1kgsGsvOOOqaRegT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -35,7 +34,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -163,6 +162,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="Filtrado del anio de profes" />
     <MESSAGE value="Filtrado del anio de profes 2" />
     <MESSAGE value="Implemntacion de api de detector de sentimienots y traductor de texto" />
