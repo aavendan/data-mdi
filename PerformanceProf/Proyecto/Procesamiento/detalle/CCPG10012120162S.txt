@@ -1,0 +1,14 @@
+GINGER VIVIANA,SALTOS BERNAL
+
+
+sin comentarios...
+
+Al principio del curso se preocupaba por explicar mejor cada detalle, pero fue pasando el curso y se despreocupo, sus lecciones son faciles pero nos manda a hacer cosas muy complicadas que ni ella sabe como hacer.
+
+Excelente profesora.
+
+La mejor profesora del semestre 
+x=(input("Inserte corazón"))
+print(x)
+
+Excelente profesora, no tenía ninguna referencia acerca de ella, pero su método es muy bueno, evalúa constantemente (talleres y deberes) por lo que la materia se vuelve interesante. Debe continuar en Espol

@@ -1,0 +1,8 @@
+CARLOS ENRIQUE,VALDIVIESO ARMENDARIZ
+
+
+La materia esta basada en un microcontrolador que ya estÃ¡ casi que extinto, es muy difÃ­cil encontrar y por ende no podemos ver el uso en forma fÃ­sica sino solo en simulados, deberÃ­an cambiar el contenido por algo que nos vaya a servir y podamos ver el uso del mismo, como es el caso con arduino que es algo que se estÃ¡ implementando en proyectos de grado y varios proyectos de diferentes materias.
+
+no hace interesantes las clases no se puede hablar con el y uno escribe un correo y no lo lee
+
+...

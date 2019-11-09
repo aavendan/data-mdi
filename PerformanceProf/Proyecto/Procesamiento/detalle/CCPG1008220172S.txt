@@ -1,0 +1,4 @@
+EDUARDO WENCESLAO,MURILLO BAJAÑA
+
+
+La unidad de punteros debería tener mayor tiempo asignado, se la vio prácticamente en 2 clases para ser algo tan primordial.

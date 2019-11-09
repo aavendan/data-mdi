@@ -1,0 +1,4 @@
+VANESSA IVONNE,ECHEVERRIA BARZOLA
+
+
+Los exÃ¡menes debrÃ­an ser dados en computadora. Hacer un script a mano es muy demorado. AdemÃ¡s cometer errores menores dentro de un cÃ³digo es algo que le sucede a absolutamente todos los programadores. Si alguien no sabe la materia no importa que IDE tenga, no podrÃ¡ resolver los problemas.

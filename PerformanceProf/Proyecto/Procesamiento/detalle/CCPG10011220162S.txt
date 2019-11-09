@@ -1,0 +1,7 @@
+ANA TERESA,TAPIA ROSERO
+
+
+La mejor profesora de Fundamentos de Programación :)
+Se nota que ama su trabajo... Exitos siempre miss!!!
+
+EXcelente profesora a mi parecer buena explicacion en clases y en otras cosas no cabe en el resto de caracteres restantes print("La mejor")
