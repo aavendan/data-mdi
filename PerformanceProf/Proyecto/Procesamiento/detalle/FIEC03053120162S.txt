@@ -1,0 +1,4 @@
+CARLOS TEODORO,MONSALVE ARTEAGA
+
+
+Me gustaría que se reduzca el alcance del proyecto para que incluya pruebas de caja blanca, pruebas caja negra, pruebas de integración, medición de software. Me gustaron los talleres, fue donde más aprendí.
