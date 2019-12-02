@@ -7,6 +7,14 @@ from nltk.tokenize import word_tokenize
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
+#Credenciales API SentiDetector
+'''
+curl -X POST -u "apikey:HGQfgUKC9Fqzjd1ByZlA2SUeovZaAz0G-veawWHILSLj" \
+--header "Content-Type: application/json" \
+--data-binary @{path_to_file}tone.json \
+"https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21"
+
+'''
 
 def limpiarStopWords(comentario):
     # Coloco aqui esta linea para que no se ejecute cada vez que se llama a la funcion
