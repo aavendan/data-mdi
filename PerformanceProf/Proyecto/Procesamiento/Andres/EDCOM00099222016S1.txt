@@ -1,0 +1,6 @@
+FRANCISCO JAVIER,CABRERIZO LORITE
+
+
+FaltÃ³ transmisiÃ³n de experiencias propias del profesor. InformaciÃ³n adicional libros, links de interÃ©s u otras herramientas a utilizar.
+
+Creo que el contenido se podrÃ­a en una prÃ³xima ocasiÃ³n ampliar a mÃ¡s tecnologÃ­as, aparte de jquery-mobile, que fue muy util

@@ -1,0 +1,11 @@
+GUILLERMO ALEJANDRO,BAQUERIZO PALMA
+
+
+La materia no serÃ­a tan dÃ­ficil si diera mÃ¡s clases y explicaciones.
+
+#programa de palabras
+n=input("ingrese su mensaje")
+print(n)
+
+Gracias por todo lo enseÃ±ado y ya pude comprender python.
+gracias profe

@@ -1,8 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13fc21e6-88e5-4086-af4a-7ca2a2405949" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="13fc21e6-88e5-4086-af4a-7ca2a2405949" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/respaldo/resultados.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/respaldo/resultados1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/resultados1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ACUG1001120171S-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ACUG1001120172S-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ACUG1001120181S-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ACUG1001220171S-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000216EDC620161.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000257ED120142.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED220151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED32013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED320141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED320142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED420141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED420142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED52013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED520142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED62013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265ED620141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265EDC120152-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265EDC120161-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265EDC220152-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265EDC220161-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265EDC320152-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265EDC420152-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265EDC420161-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1020141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1020142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1020151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1120142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1120151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I120141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I120142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I120151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1220141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1220142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1320141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1320142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I142013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1420141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1420142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1420151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1520142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1520151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I162013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1620141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1620142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1620151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I172013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1720141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1720142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1720151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1820142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I192013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1920142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I1920151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2020141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2020151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I212013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2120141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2120142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2120151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I220142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I220151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I222013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2220142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I232013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2320141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2320142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I242013I2-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2420141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2420142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2420151-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2520141-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2520142-CHECKED.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detalle/ADM000265I2520151-CHECKED.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/archivo.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/archivo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/funciones.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/funciones.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/resultados.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/resultados.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ACUG1001120171S-CHECKED-CHECKED.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ACUG1001120172S-CHECKED-CHECKED.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ACUG1001120181S-CHECKED-CHECKED.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ACUG1001220171S-CHECKED-CHECKED.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000216EDC620161-CHECKED.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000257ED120142-CHECKED.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED220151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED32013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED320141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED320142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED420141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED420142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED52013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED520142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED62013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265ED620141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265EDC120152.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265EDC120161.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265EDC220152.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265EDC220161.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265EDC320152.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265EDC420152.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265EDC420161.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1020141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1020142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1020151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1120142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1120151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I120141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I120142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I120151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1220141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1220142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1320141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1320142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I142013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1420141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1420142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1420151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1520142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1520151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I162013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1620141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1620142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1620151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I172013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1720141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1720142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1720151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1820142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I192013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1920142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I1920151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2020141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2020151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I212013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2120141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2120142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2120151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I220142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I220151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I222013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2220142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I232013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2320141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2320142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I242013I2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2420141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2420142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2420151.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2520141.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2520142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detalle/ADM000265I2520151.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +175,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -36,18 +194,6 @@
       <console-settings sdk-home="C:\Users\emman\AppData\Local\Programs\Python\Python37-32\python.exe">
         <option name="mySdkHome" value="C:\Users\emman\AppData\Local\Programs\Python\Python37-32\python.exe" />
       </console-settings>
-    </option>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
     </option>
   </component>
   <component name="RunManager" selected="Python.archivo">
@@ -99,6 +245,18 @@
         <item itemvalue="Python.funciones" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -180,5 +338,23 @@
     <MESSAGE value="Integracion de las herramientas Watson Tone y Traductor para la creacion de diccionario con las puntuaciones de los sentimientos en los comentarios" />
     <MESSAGE value="Procesamiento parcial de archivos (345/15780)" />
     <option name="LAST_COMMIT_MESSAGE" value="Procesamiento parcial de archivos (345/15780)" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1601" height="812" key="GridCell.Tab.0.bottom" timestamp="1575512394853">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1601" height="812" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1600.870@0.0.1920.1050" timestamp="1575512394853" />
+    <state width="1601" height="812" key="GridCell.Tab.0.center" timestamp="1575512394853">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1601" height="812" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1600.870@0.0.1920.1050" timestamp="1575512394853" />
+    <state width="1601" height="812" key="GridCell.Tab.0.left" timestamp="1575512394853">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1601" height="812" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1600.870@0.0.1920.1050" timestamp="1575512394853" />
+    <state width="1601" height="812" key="GridCell.Tab.0.right" timestamp="1575512394853">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1601" height="812" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1600.870@0.0.1920.1050" timestamp="1575512394853" />
   </component>
 </project>

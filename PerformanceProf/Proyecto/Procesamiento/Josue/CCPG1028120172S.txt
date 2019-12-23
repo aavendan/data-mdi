@@ -1,0 +1,13 @@
+OTILIA MARIA,ALEJANDRO MOLINA
+
+
+No se entendio el proyecto. Las clases no son aplicadas a la practica, muy mecanicas, datasets ficticios. Weka no es Data Mining. No es util para big data.
+
+El contenido me parece mecánico y aprenderse formulas de memoria, considero que deberian permitir un cheatsheet de formulas, ya que el objetivo es saber aplicar la formula y no aprenderse de memoria, el contenido de talleres es usar WEKA , dar click y aca , cargar un dataset aqui y escribir lo que se ve en resultados, eso me parece recontra mal, el objetivo es saber el manejo de clasificadores
+
+El proyecto fue muy confuso, recién explico como debía hacer 2 días antes, se desconoce aun como lo evaluará. Los talleres parecen solo un tutorial de como usar una herramienta(WEKA)es decir como cualquier instructivo descargado de internet, parece no preparar clases con anterioridad. Y no sabe distribuir las horas de clase.
+
+Sobre el proyecto, no fue explícita hasta dos días antes de la presentación sobre lo que deseaba. Los talleres sólo son un instructivo de una aplicación que se descarga de internet. El examen era ambiguo. Parece que prepara clase con muy poco tiempo porque se enreda mucho. No usa adecuadamente el tiempo en clase.
+
+Sería recomendable que los talleres en clase sean más didácticos. No es bueno que el taller solo sean instrucciones de cómo manejar un programa. Además se debe ser más claro en lo que pide para el proyecto, ya que estos no fueron aclarados hasta la última semana del parcial.
+Me gustaría que tuviera un mejor enfoque la materia, y sobre todo la manera de explicar los contenidos debe ser mejorada.

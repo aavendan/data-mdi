@@ -67,17 +67,21 @@ def dicSentiComents(comentsLimpios):
         for dicTono in dicSenti["document_tone"]["tones"]:
             dicTonoComent[dicTono["tone_name"]] = dicTono["score"]
 
-        dicComents[coment] = dicTonoComent
+        dicComents[comentsLimpios[i]] = dicTonoComent
 
     return dicComents
 
 def detectasSentimientos(comentario):
 
-    authenticator = IAMAuthenticator('HGQfgUKC9Fqzjd1ByZlA2SUeovZaAz0G-veawWHILSLj')
+    authenticator = IAMAuthenticator('KSq_GkAjahiOw2cp2jIQs_5E-sQXm5CxZ66_vC5yxOEo')
 
     tone_analyzer = ToneAnalyzerV3(version='2017-09-21',authenticator=authenticator)
-    tone_analyzer.set_service_url("https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21")
-    tone_analysis = tone_analyzer.tone({'text': comentario},content_type='application/json').get_result()
+    tone_analyzer.set_service_url("https://gateway.watsonplatform.net/tone-analyzer/api")
+    try:
+
+        tone_analysis = tone_analyzer.tone({'text': comentario},content_type='application/json').get_result()
+    except Exception as ex:
+        raise Exception("Error Detectar Sentimientos")
 
     #result = json.dumps(tone_analysis, indent=2)
     return tone_analysis
@@ -112,3 +116,18 @@ def tra(text):
     translation = language_translator.translate(text=text, model_id='en-es',content_type='application/json').get_result()
     print(json.dumps(translation, indent=2))
 
+def procesadorDic(dic_coments, lista_comments):
+    #cojer a todos los quer tiene analitico o critico
+    for profesor in dic_coments.keys():
+
+        for codigoMat in dic_coments[profesor].keys():
+
+            for anio in dic_coments[profesor][codigoMat].keys():
+
+                for termino in dic_coments[profesor][codigoMat][anio].keys():
+
+                    dic_comment = dic_coments[profesor][codigoMat][anio][termino]
+
+                    for comenentario,dicTone in dic_comment.items():
+                        if "Analytical" in dicTone.keys() or "Confident" in dicTone.keys():
+                            lista_comments.append(limpiarStopWords(comenentario)) #Extraer adjetivos

@@ -1,0 +1,8 @@
+CARMEN KARINA,VACA RUIZ
+
+
+Quizas la unica queja que tengo es respecto al proyecto. En inicio de le dio el enfoque de desarrollar un proyecto para presentar en algun concurso, sin embargo esto quiere decir que puede tocar conseguir los datos, lo cual puede llegar a ser muy complicado. Hubo grupos que trabajaron con datos ya generados, haciendo un poco mas facil el trabajo.
+
+NADA.
+
+Recomiendo una mejor planificacion en la parte del analisis de la data, con una clase donde se muestren datos mas extensos y realizar los analisis que se crean necesarios ya que al involucrar la parte estadistica hay un poco de confusion
