@@ -2,7 +2,7 @@ import funciones as fn
 import os
 import json
 
-rutaParcial = "../detalle/"
+rutaParcial = "../Enmanuel/"
 dicc = {}
 cantComents = 0
 limite = 0
@@ -58,13 +58,13 @@ for nombreArchivo in os.listdir(rutaParcial):
 
     except Exception as ex:
         archivo.close()
-        dic = open("resultados.txt", "w", encoding="UTF8")
+        dic = open("resultados.txt", "w", encoding="UTF-8")
         dic.write(json.dumps(dicc))
         print("Error en la API")
         b=False
 
 if b:
-    dic = open("resultados.txt", "w", encoding="UTF8")
+    dic = open("resultados.txt", "w", encoding="UTF-8")
     dic.write(json.dumps(dicc))
 
 #print(json.loads())
