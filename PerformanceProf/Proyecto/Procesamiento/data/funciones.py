@@ -21,6 +21,7 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 def getKey(item):
     return item[0]
 
+
 def tokenizar(text, lista):
 
     for i in sent_tokenize(text):

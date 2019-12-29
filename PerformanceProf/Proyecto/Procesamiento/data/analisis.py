@@ -16,16 +16,16 @@ listaPerf = []
 fn.procesadorDic(dicDinamico, listaPerf)
 cont = " ".join(listaPerf).replace("\n", " ")
 #cont = " ".join(listaPerf).replace("\n", " ").replace(",", ".")
-
 archPerfiles = open("lista_perfiles.txt", "w", encoding="UTF-8")
 archPerfiles.write(str(listaPerf))
-print("paso")
+print("Termino el pre-procesamiento de la data")
+
 data = []
 fn.tokenizar(cont, data)
 print("paso2")
 #aqui se crea el modelo segun la data ingresada
 model = Word2Vec(data, min_count=1, size = 100, window = 10, sg=1)
-print("Tamanio data %d" %(len(data)))
+print("Termino la creacion del modelo. Tamaño de data %d" %(len(data)))
 
 dicS = {}
 similitud = 0.65
