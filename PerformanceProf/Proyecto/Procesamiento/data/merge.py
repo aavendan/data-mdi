@@ -17,6 +17,6 @@ for nombreArchivo in os.listdir(rutaParcial):
     listDicc.append(dicDinamico)
 
 dictFinal = fn.funsionDicionarios(listDicc)
-archivo = open("comentariosAnalizadosT.txt", "w", encoding="UTF-8")
+archivo = open("comentariosAnalizadosTT.txt", "w", encoding="UTF-8")
 print(dictFinal)
 archivo.write(json.dumps(dictFinal))

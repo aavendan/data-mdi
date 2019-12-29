@@ -1,7 +1,12 @@
 import re
 import json
+import numba
 import requests
 import collections.abc
+from numba import njit, cuda
+from numba.typed import List
+from numba.typed import Dict
+from nltk.corpus import wordnet
 from gensim.models import Word2Vec
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
@@ -12,10 +17,72 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 #Credenciales API SentiDetector
 
+
 def getKey(item):
     return item[0]
 
-def evaluarSim(data, dic, model, similitud):
+def tokenizar(text, lista):
+
+    for i in sent_tokenize(text):
+        temp = []
+        for j in word_tokenize(i):
+            temp.append(j.lower())
+        lista.append(temp)
+
+
+def evaluarSimilitud(data, dic, model, similitud):
+
+    c = 0
+    cc = 0
+    for tokI in data:
+        print("TokI %d" %cc)
+        if c < 10:
+            cont = 0
+            for tokF in data:
+                if tokI != tokF and cont < 100:
+                    if similitudHibrida(tokI, tokF, model) >= similitud:
+                        contDic(" ".join(tokI), dic)
+                    #cont += 1
+                else:
+                    break
+            #c += 1
+        else:
+            break
+        cc+=1
+
+def similitudHibrida(tokI, tokF, model):
+    """
+    Aqui determino cual oracion es la mas corta para limpiar las stop words y en las palabaras que "sobreviven"
+    buscar si tienen sinonimos en otra oracion (que es mas corta)
+    """
+    long = min(len(tokI), len(tokF))
+    ls1 = limpiarStopWords(" ".join(tokI)).split(" ") if len(tokI) == long \
+        else limpiarStopWords(" ".join(tokF)).split(" ")
+    ls2 = (" ".join(tokI)) if len(tokI) != long else (" ".join(tokF))
+
+    #determino la similitud de palabra por palabra
+    acumSimilitud = 0
+    long = min(len(tokI), len(tokF))
+    for i in range(long):
+        acumSimilitud += model.similarity(tokI[i], tokF[i])
+    """
+    Itero en la lsita de palabras y busca si tiene sinonimos en la oracion, si tiene entonces al
+    acumulador que tenia arrivale sumo 1 para expresar que tiene mas relevancia porque comaprte una idea con otro comentario diferente
+    """
+    for w1 in ls1:
+        # esta funcion recibe la palabra y la oracion donde va a buscar sinonimos
+        syn = get_word_synonyms_from_sent(w1, ls2)
+        if len(syn) > 0:
+            long += 1
+            acumSimilitud += 1
+
+    # aqui esta el promedio de similtud palabra por palabra, este es el promedio que es mas acertado, el que
+    # toma toda la oracion y mira la similitud no es tan efectivo
+    similitud = acumSimilitud / long
+    return similitud
+
+
+def evaluarSimDEPRECATED(data, dic, model, similitud):
 
     c = 0
     for tokI in data:
@@ -42,6 +109,7 @@ def contDic(tok, dic):
     else:
         dic[tok] = 1
 
+
 def calcFrecuencia(listTexto, d):
 
     for line in listTexto:
@@ -58,6 +126,7 @@ def calcFrecuencia(listTexto, d):
             elif len(palabra) > 2:
                 d[palabra] = 1
 
+
 def dictToTuple(dic, listTuplas):
 
     dic = dict(dic)
@@ -68,6 +137,16 @@ def dictToTuple(dic, listTuplas):
         listTuplas.append(tupla)
     sorted(listTuplas)
 
+
+def get_word_synonyms_from_sent(word, sent):
+    word_synonyms = []
+    for synset in wordnet.synsets(word, lang='spa'):
+        for lemma in synset.lemma_names(lang='spa'):
+            if lemma in sent and lemma != word:
+                word_synonyms.append(lemma)
+    return word_synonyms
+
+
 def limpiarStopWords(comentario):
     # Coloco aqui esta linea para que no se ejecute cada vez que se llama a la funcion
     stop_words = set(stopwords.words('spanish'))
@@ -76,9 +155,11 @@ def limpiarStopWords(comentario):
     comentFiltrado = [w for w in oraciones if not w in stop_words]
     return " ".join(comentFiltrado)
 
+
 def separarPalabras(comentFiltrado):
 
     return " ".join(re.findall("[A-Z][^A-Z]*", comentFiltrado))
+
 
 def llenarDiccionario(profesor, codigoMat, termino, anio, comentsLimpios, dicc):
 
@@ -97,6 +178,7 @@ def llenarDiccionario(profesor, codigoMat, termino, anio, comentsLimpios, dicc):
                     dicc[profesor][codigoMat][anio][termino].extend(comentsLimpios)
 
     return dicc
+
 
 def dicSentiComents(comentsLimpios):
     print(comentsLimpios)
@@ -123,6 +205,7 @@ def dicSentiComents(comentsLimpios):
 
     return dicComents
 
+
 def detectasSentimientos(comentario):
 
     authenticator = IAMAuthenticator('iY5ckIMqjpE0I6WHh39IYqt-1we_ehOsbLu8T2K4sxIQ')
@@ -137,6 +220,7 @@ def detectasSentimientos(comentario):
 
     #result = json.dumps(tone_analysis, indent=2)
     return tone_analysis
+
 
 def traducir(text):
 
@@ -153,20 +237,6 @@ def traducir(text):
     response = requests.request("GET", url, headers=headers, params=querystring)
 
     return response.json()
-
-def tra(text):
-    #"https://gateway.watsonplatform.net/language-translator/api/v3/identify?version=2018-05-01"
-
-    authenticator = IAMAuthenticator('wmFyRWgaNLIIlZ6DHVkC41j6ZvUWdZrO3mWsBgggSgs5')
-
-    language_translator = LanguageTranslatorV3(
-        version='2018-05-01',
-        authenticator=authenticator)
-
-    language_translator.set_service_url('https://gateway.watsonplatform.net/language-translator/api/v3/identify?version=2018-05-01')
-
-    translation = language_translator.translate(text=text, model_id='en-es',content_type='application/json').get_result()
-    print(json.dumps(translation, indent=2))
 
 def procesadorDic(dic_coments, lista_comments):
     #cojer a todos los quer tiene analitico o critico
@@ -202,6 +272,7 @@ def procesadorDic(dic_coments, lista_comments):
                             lista_comments.extend(lT)
                             #lista_comments.append(str(comenentario).lower()) #Extraer adjetivos
 
+
 def procesadorDic2(dic_coments, lista_comments):
     #cojer a todos los quer tiene analitico o critico
     for profesor in dic_coments.keys():
@@ -220,6 +291,7 @@ def procesadorDic2(dic_coments, lista_comments):
                             
                             lista_comments.append(str(comenentario).lower()) #Extraer adjetivos
 
+
 def update(dictDest, dictSrc):
     for clave, valor in dictSrc.items():
         if isinstance(valor, collections.abc.Mapping):
@@ -227,6 +299,7 @@ def update(dictDest, dictSrc):
         else:
             dictDest[clave] = valor
     return dictDest
+
 
 def funsionDicionarios(listaDics):
 
