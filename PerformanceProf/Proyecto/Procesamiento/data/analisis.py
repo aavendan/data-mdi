@@ -22,13 +22,12 @@ print("Termino el pre-procesamiento de la data")
 
 data = []
 fn.tokenizar(cont, data)
-print("paso2")
 #aqui se crea el modelo segun la data ingresada
-model = Word2Vec(data, min_count=1, size = 100, window = 10, sg=1)
+model = Word2Vec(data, min_count=1, size = 130, window = 10, sg=1)
 print("Termino la creacion del modelo. Tamaño de data %d" %(len(data)))
 
 dicS = {}
-similitud = 0.65
+similitud = 0.67
 fn.evaluarSimilitud(data, dicS, model, similitud)
 archioF = open("procFinal.txt", "w", encoding="UTF-8")
 archioF.write(json.dumps(dicS))
@@ -36,12 +35,7 @@ archioF.write(json.dumps(dicS))
 listaTps = []
 fn.dictToTuple(dicS, listaTps)
 listaTps.sort(key=lambda tup: tup[0], reverse=True)
-print(listaTps)
-
-
-
-
-
+print("Fin del analisis, para presentar los resultados ir al modulo presentarResult.py")
 '''
 print(data[-1])
 print(data[-2])
