@@ -2,6 +2,7 @@ import re
 import json
 import numba
 import requests
+from os import path
 import collections.abc
 from numba import njit, cuda
 from numba.typed import List
@@ -17,6 +18,33 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 #Credenciales API SentiDetector
 
+def topTono(tonoOB, dicP, dicR):
+
+    for profesor in dicP.keys():
+        for tono in dicP[profesor].keys():
+            if tono.lower() == tonoOB.lower():
+                dicR[profesor] = dicP[profesor][tono]
+
+
+def comentProfbyTone(profesorOB, tonoOB, dic_coments):
+
+    for profesor in dic_coments.keys():
+
+        if profesor == profesorOB:
+            for codigoMat in dic_coments[profesor].keys():
+
+                for anio in dic_coments[profesor][codigoMat].keys():
+
+                    for termino in dic_coments[profesor][codigoMat][anio].keys():
+
+                        dic_comment = dic_coments[profesor][codigoMat][anio][termino]
+
+                        for comenentario, dicTone in dic_comment.items():
+
+                            for tono in dicTone.keys():
+                                if tono.lower() == tonoOB.lower():
+                                    print(comenentario)
+
 
 def getKey(item):
     return item[0]
@@ -31,12 +59,20 @@ def tokenizar(text, lista):
         lista.append(temp)
 
 
+def pathUnique(pathArchPerf):
+    extraArchPerf = 0
+    while path.exists(pathArchPerf + str(extraArchPerf) + ".txt"):
+        extraArchPerf += 1
+    return pathArchPerf + str(extraArchPerf) + ".txt"
+
+
 def evaluarSimilitud(data, dic, model, similitud):
 
+    total = len(data)
     c = 0
     cc = 0
     for tokI in data:
-        print("TokI %d" %cc)
+        print("Porcentaje de avance %.2f" %((cc/total)*100))
         if c < 10:
             cont = 0
             for tokF in data:
@@ -50,6 +86,7 @@ def evaluarSimilitud(data, dic, model, similitud):
         else:
             break
         cc+=1
+
 
 def similitudHibrida(tokI, tokF, model):
     """
@@ -81,6 +118,41 @@ def similitudHibrida(tokI, tokF, model):
     # toma toda la oracion y mira la similitud no es tan efectivo
     similitud = acumSimilitud / long
     return similitud
+
+
+def totalTones(profesor, dicProfs):
+
+    dic = dicProfs[profesor]
+    total = 0
+    for tono in dic.keys():
+        total += dic[tono]
+    return  total
+
+
+def presentRankingProf(listTonos, top, dicProfs, descp):
+
+    for tono in listTonos:
+        print()
+        print("Racking profesor con tono %s" %tono)
+        dicRJ = {}
+        topTono(tono, dicProfs, dicRJ)
+        listRJ = []
+        dictToTuple(dicRJ, listRJ)
+        listRJ.sort(key=lambda tup: tup[0], reverse=True)
+        archivo = open("resultados/"+descp+"/top"+str(top)+"_"+tono+".txt", "w", encoding="UTF-8")
+
+
+        ind = 0
+        while ind < len(listRJ) and ind < top:
+            profesor = listRJ[ind][1]
+            total = totalTones(profesor, dicProfs)
+            procentaje = (listRJ[ind][0]/total)*100
+            t = "%"
+            print("Posición N° %d es %s con %d tonos %s (%.2f%s)" % (ind+1, profesor, listRJ[ind][0],
+                                                                   tono.upper(), procentaje, t))
+            archivo.write(str(ind)+","+listRJ[ind][1]+","+str(listRJ[ind][0])+","+str(procentaje)+"\n")
+            ind+=1
+        archivo.close()
 
 
 def evaluarSimDEPRECATED(data, dic, model, similitud):
@@ -129,6 +201,16 @@ def calcFrecuencia(listTexto, d):
 
 
 def dictToTuple(dic, listTuplas):
+
+    dic = dict(dic)
+
+    for clave in dic.keys():
+        valor = dic.get(clave)
+        tupla = (valor, clave)
+        listTuplas.append(tupla)
+    sorted(listTuplas)
+
+def dictToTuple2(dic, listTuplas):
 
     dic = dict(dic)
 
@@ -239,6 +321,7 @@ def traducir(text):
 
     return response.json()
 
+
 def procesadorDic(dic_coments, lista_comments):
     #cojer a todos los quer tiene analitico o critico
     for profesor in dic_coments.keys():
@@ -291,6 +374,127 @@ def procesadorDic2(dic_coments, lista_comments):
                             comenentario = str(comenentario).replace("'", "")
                             
                             lista_comments.append(str(comenentario).lower()) #Extraer adjetivos
+
+
+def llenarRanking(profesor, dicTones, dicT):
+
+    if profesor not in dicT.keys():
+
+        dicT[profesor] = {}
+        for tono in dicTones.keys():
+            dicT[profesor][tono] = 1
+    else:
+        for tono in dicTones.keys():
+            if tono not in dicT[profesor].keys():
+                dicT[profesor][tono] = 1
+            else:
+                dicT[profesor][tono] = dicT[profesor][tono] + 1
+
+
+def rankingProf(dic_coments, dicTonesProf):
+
+    # cojer a todos los quer tiene analitico o critico
+    for profesor in dic_coments.keys():
+
+        for codigoMat in dic_coments[profesor].keys():
+
+            for anio in dic_coments[profesor][codigoMat].keys():
+
+                for termino in dic_coments[profesor][codigoMat][anio].keys():
+
+                    dic_comment = dic_coments[profesor][codigoMat][anio][termino]
+
+                    for comenentario, dicTone in dic_comment.items():
+
+                        llenarRanking(profesor, dicTone, dicTonesProf)
+
+
+def llenarRankingSem(anio, termino, profesor, dicTones, dicT):
+
+    termino = anio+"_"+termino
+    if termino not in dicT:
+        dicT[termino] = {profesor : {}}
+
+        for tono in dicTones.keys():
+            dicT[termino][profesor][tono] = 1
+    else:
+        if profesor not in dicT[termino].keys():
+
+            dicT[termino][profesor] = {}
+            for tono in dicTones.keys():
+                dicT[termino][profesor][tono] = 1
+        else:
+
+            for tono in dicTones.keys():
+                if tono not in dicT[termino][profesor].keys():
+                    dicT[termino][profesor][tono] = 1
+                else:
+                    dicT[termino][profesor][tono] = dicT[termino][profesor][tono] + 1
+
+
+def rankingSemProf(dic_coments, dicTonesProf):
+
+    # cojer a todos los quer tiene analitico o critico
+    for profesor in dic_coments.keys():
+
+        for codigoMat in dic_coments[profesor].keys():
+
+            for anio in dic_coments[profesor][codigoMat].keys():
+
+                for termino in dic_coments[profesor][codigoMat][anio].keys():
+
+                    dic_comment = dic_coments[profesor][codigoMat][anio][termino]
+
+                    for comenentario, dicTone in dic_comment.items():
+
+                        llenarRankingSem(anio, termino, profesor, dicTone, dicTonesProf)
+
+
+def obtenerNombreMat(codigoMat):
+    archivo = open("CodigoMateriJSON.txt", "r", encoding="UTF-8")
+    lineasArchivo = archivo.readline()
+    archivo.close()
+
+    dicci = dict(json.loads(lineasArchivo))
+
+    materia = dicci.get(codigoMat, codigoMat)
+    if materia == -1:
+        print("No se encontro el codigo %s" %codigoMat)
+    else:
+        return materia
+
+def llenarRankingMats(codigoMat, dicTone, dicTonesMat):
+
+    materia = obtenerNombreMat(codigoMat)
+    if materia not in dicTonesMat:
+        dicTonesMat[materia] = {}
+        for tono in dicTone.keys():
+            dicTonesMat[materia][tono] = 1
+    else:
+        for tono in dicTone.keys():
+            if tono not in dicTonesMat[materia].keys():
+                dicTonesMat[materia][tono] = 1
+            else:
+                dicTonesMat[materia][tono] =  dicTonesMat[materia][tono] + 1
+
+
+
+def rankingMats(dic_coments, dicTonesMat):
+
+    # cojer a todos los quer tiene analitico o critico
+    for profesor in dic_coments.keys():
+
+        for codigoMat in dic_coments[profesor].keys():
+
+            for anio in dic_coments[profesor][codigoMat].keys():
+
+                for termino in dic_coments[profesor][codigoMat][anio].keys():
+
+                    dic_comment = dic_coments[profesor][codigoMat][anio][termino]
+
+                    for comenentario, dicTone in dic_comment.items():
+
+                        llenarRankingMats(codigoMat, dicTone, dicTonesMat)
 
 
 def update(dictDest, dictSrc):

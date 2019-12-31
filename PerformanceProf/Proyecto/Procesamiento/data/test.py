@@ -1,19 +1,27 @@
-from nltk.corpus import wordnet
+import funciones as fn
+import os
+import json
 
-def get_word_synonyms_from_sent(word, sent):
+rutaParcial = "../detalle/"
+dicc = {}
+cantComents = 0
+limite = 0
+b=True
+print("Leyendo archivos y creando diccionario. . .")
 
-    word_synonyms = []
-    print("1 " + str(wordnet.synsets(word, lang='spa')))
-    for synset in wordnet.synsets(word, lang='spa'):
-        print("2 " + str(synset.lemma_names(lang='spa')))
-        for lemma in synset.lemma_names(lang='spa'):
-            if lemma in sent:
-                word_synonyms.append(lemma)
-    return word_synonyms
 
-word = "comer"
-sent = ['yo', 'quiero', 'almorzar', 'un', 'carne', 'ahora', '.']
-word_synonyms = get_word_synonyms_from_sent(word, sent)
-print ("WORD:", word)
-print ("SENTENCE:", sent)
-print ("SYNONYMS FOR '" + word.upper() + "' FOUND IN THE SENTENCE: " + ", ".join(word_synonyms))
+for nombreArchivo in os.listdir(rutaParcial):
+
+    rutaCompleta = os.path.join(rutaParcial, nombreArchivo)
+    archivo = open(rutaCompleta, "r", encoding='UTF-8')
+    nombreArchivo = nombreArchivo.replace(".txt", "")
+    if nombreArchivo.find("-CHECKED") == -1:
+        indTermino = nombreArchivo.find("1S") if nombreArchivo.find("1S") != -1 else nombreArchivo.find("2S")
+
+        termino = nombreArchivo[indTermino:]
+        anio = nombreArchivo[indTermino-4:indTermino]
+        codigoMat = nombreArchivo[:indTermino-4]
+        #IDIG200710220171S
+        todo = codigoMat+anio+termino
+        if todo==("IDIG200710220171S") != -1:
+            print(codigoMat+anio+termino)

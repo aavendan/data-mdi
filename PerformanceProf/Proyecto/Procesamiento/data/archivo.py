@@ -20,7 +20,7 @@ for nombreArchivo in os.listdir(rutaParcial):
         if nombreArchivo.find("-CHECKED") == -1:
             indTermino = nombreArchivo.find("1S") if nombreArchivo.find("1S") != -1 else nombreArchivo.find("2S")
 
-            termino = nombreArchivo[indTermino::]
+            termino = nombreArchivo[indTermino:]
             anio = nombreArchivo[indTermino-4:indTermino]
             codigoMat = nombreArchivo[:indTermino-4]
 
