@@ -1,0 +1,4 @@
+LEONARDO DE JESÚS,MUÑOZ MONTESDEOCA
+
+
+Me parece que la materia necesita una reestructuracion ya que los proyectos están muy complicados y faltaría un seminario de inducción al uso de la FPGA

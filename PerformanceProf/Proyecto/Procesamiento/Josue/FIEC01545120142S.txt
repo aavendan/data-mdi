@@ -1,0 +1,4 @@
+GUIDO ALFREDO,CAICEDO ROSSI
+
+
+La materia esta llena de teorÃ­a sin embargo las evaluaciones se tratan de aplicarla a ejercicios, pero deberÃ­an existir varias actividades (mÃ¡s de una) para que el estudiante ponga en prÃ¡ctica sus conocimientos. El proyecto deberÃ­a tener mÃ¡s directrices y mÃ¡s orientadas a la IHM que a la codificaciÃ³n pura. DeberÃ­a haber libertad de escoger plataformas para el proyecto (web, movil, escritorio, etc)

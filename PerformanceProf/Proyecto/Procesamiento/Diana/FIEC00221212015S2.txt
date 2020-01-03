@@ -1,0 +1,12 @@
+DANIEL ERICK,OCHOA DONOSO
+
+
+La sugerencia serÃ­a  trabajar totalmente con Matlab en esta materia introductoria. En lo personal el tema de visiÃ³n era totalmente nuevo por lo que trabajar en OpenCV y C++ resultaba demasiado complejo en un principio cuando no tenia claras las bases de la materia.
+
+Mucho material, poco tiempo. FaltÃ³ retroalimentaciÃ³n de los trabajos autÃ³nomos y mÃ¡s ejemplos prÃ¡cticos.
+
+esta materia no se debe dictar por varios profesores, porque exige a los estudiantes tener tareas multiples de cada uno, sin que ellos sincronicen las mismas, por lo tanto se vuelve un dolor de cabeza, ademas cada estilo del profesor es completamente diferente lo cual dificulta la compresion de los conocimientos con 
+diferentes estilos.las notas descritas son para el titular de la materia D ochoa.
+
+Debido a que la materia fue dictada por 3 profesores diferentes no hubo una coordinaciÃ³n en cuanto a las semanas de dedicaciÃ³n de los 2 Ãºltimos profesores, las Ãºltimas 3 semanas fueron dictadas de manera rÃ¡pida y no se alcanzÃ³ a cubrir todo de una manera eficiente.
+No tenÃ­an definido la puntuaciÃ³n de los deberes,evaluaciones y proyecto.
