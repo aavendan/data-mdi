@@ -26,6 +26,6 @@ for clave in dicProfs.keys():
         print(clave)
 print(dicProfs["DAVID ALONSO JURADO MOSQUERA"])
 """
-top = 40
+top = 50
 listaT = ["joy", "fear", "sadness", "anger", "confident", "analytical", "tentative"]
 fn.presentRankingProf(listaT, top, dicProfs, "top_global")

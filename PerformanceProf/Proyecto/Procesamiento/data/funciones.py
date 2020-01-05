@@ -2,6 +2,7 @@ import re
 import json
 import numba
 import requests
+import os
 from os import path
 import collections.abc
 from numba import njit, cuda
@@ -138,19 +139,61 @@ def presentRankingProf(listTonos, top, dicProfs, descp):
         topTono(tono, dicProfs, dicRJ)
         listRJ = []
         dictToTuple(dicRJ, listRJ)
-        listRJ.sort(key=lambda tup: tup[0], reverse=True)
+
         archivo = open("resultados/"+descp+"/top"+str(top)+"_"+tono+".txt", "w", encoding="UTF-8")
-
-
+        listRJ2 = []
+        for tupla in listRJ:
+            valor = tupla[0]
+            profesor = tupla[1]
+            porcentaje = (valor/totalTones(profesor, dicProfs))*100
+            tuplaN = (porcentaje, profesor)
+            listRJ2.append(tuplaN)
+        listRJ2.sort(key=lambda tup: tup[0], reverse=True)
         ind = 0
-        while ind < len(listRJ) and ind < top:
-            profesor = listRJ[ind][1]
+        while ind < len(listRJ2) and ind < top:
+            profesor = listRJ2[ind][1]
             total = totalTones(profesor, dicProfs)
-            procentaje = (listRJ[ind][0]/total)*100
+            cant = listRJ2[ind][0]*total
             t = "%"
-            print("Posición N° %d es %s con %d tonos %s (%.2f%s)" % (ind+1, profesor, listRJ[ind][0],
-                                                                   tono.upper(), procentaje, t))
-            archivo.write(str(ind)+","+listRJ[ind][1]+","+str(listRJ[ind][0])+","+str(procentaje)+"\n")
+            print("Posición N° %d es %s con %d%s tonos %s (%d)" % (ind+1, profesor, listRJ2[ind][0], t
+                                                                   ,tono.upper(), cant))
+            archivo.write(str(ind+1)+","+listRJ2[ind][1]+","+str(round(listRJ2[ind][0],2))+","+str(round(cant, 0))+"\n")
+            ind+=1
+        archivo.close()
+
+
+def presentRankingProf2(listTonos, top, dicProfs, descp):
+
+    for tono in listTonos:
+        print()
+        print("Racking profesor con tono %s" %tono)
+        dicRJ = {}
+        topTono(tono, dicProfs, dicRJ)
+        listRJ = []
+        dictToTuple(dicRJ, listRJ)
+        if not os.path.exists("resultados/"+descp+"/"):
+            os.mkdir("resultados/"+descp+"/")
+            print("Directory ", "resultados/"+descp+"/", " Created ")
+        else:
+            print("Directory ", "resultados/"+descp+"/", " already exists")
+        archivo = open("resultados/"+descp+"/top"+str(top)+"_"+tono+".txt", "w", encoding="UTF-8")
+        listRJ2 = []
+        for tupla in listRJ:
+            valor = tupla[0]
+            profesor = tupla[1]
+            porcentaje = (valor/totalTones(profesor, dicProfs))*100
+            tuplaN = (porcentaje, profesor)
+            listRJ2.append(tuplaN)
+        listRJ2.sort(key=lambda tup: tup[0], reverse=True)
+        ind = 0
+        while ind < len(listRJ2) and ind < top:
+            profesor = listRJ2[ind][1]
+            total = totalTones(profesor, dicProfs)
+            cant = listRJ2[ind][0]*total
+            t = "%"
+            print("Posición N° %d es %s con %d%s tonos %s (%d)" % (ind+1, profesor, listRJ2[ind][0], t
+                                                                   ,tono.upper(), cant))
+            archivo.write(str(ind+1)+","+listRJ2[ind][1]+","+str(round(listRJ2[ind][0],2))+","+str(round(cant, 0))+"\n")
             ind+=1
         archivo.close()
 
@@ -456,12 +499,15 @@ def obtenerNombreMat(codigoMat):
     archivo.close()
 
     dicci = dict(json.loads(lineasArchivo))
+    materia = "NO EXISTE"
+    for clave in dicci.keys():
+        if codigoMat.find(clave) != -1:
+            materia = dicci[clave]
 
-    materia = dicci.get(codigoMat, codigoMat)
-    if materia == -1:
-        print("No se encontro el codigo %s" %codigoMat)
-    else:
-        return materia
+    #if materia == "NO EXISTE":
+        #print("No se encontro el codigo %s" %codigoMat)
+
+    return materia
 
 def llenarRankingMats(codigoMat, dicTone, dicTonesMat):
 
@@ -495,6 +541,59 @@ def rankingMats(dic_coments, dicTonesMat):
                     for comenentario, dicTone in dic_comment.items():
 
                         llenarRankingMats(codigoMat, dicTone, dicTonesMat)
+
+
+def obtenerNombreFact(codgio):
+
+    nombre = ""
+    for letra in codgio:
+        letra = str(letra)
+        if not letra.isdigit():
+            nombre += letra
+        else:
+            break
+    return nombre
+
+
+def llenarRankingFact(codigo, profesor, dicTones, dicT):
+
+    termino = obtenerNombreFact(codigo)
+    if termino not in dicT:
+        dicT[termino] = {profesor : {}}
+
+        for tono in dicTones.keys():
+            dicT[termino][profesor][tono] = 1
+    else:
+        if profesor not in dicT[termino].keys():
+
+            dicT[termino][profesor] = {}
+            for tono in dicTones.keys():
+                dicT[termino][profesor][tono] = 1
+        else:
+
+            for tono in dicTones.keys():
+                if tono not in dicT[termino][profesor].keys():
+                    dicT[termino][profesor][tono] = 1
+                else:
+                    dicT[termino][profesor][tono] = dicT[termino][profesor][tono] + 1
+
+
+def rankingFactProf(dic_coments, dicTonesProf):
+
+    # cojer a todos los quer tiene analitico o critico
+    for profesor in dic_coments.keys():
+
+        for codigoMat in dic_coments[profesor].keys():
+
+            for anio in dic_coments[profesor][codigoMat].keys():
+
+                for termino in dic_coments[profesor][codigoMat][anio].keys():
+
+                    dic_comment = dic_coments[profesor][codigoMat][anio][termino]
+
+                    for comenentario, dicTone in dic_comment.items():
+
+                        llenarRankingFact(codigoMat, profesor, dicTone, dicTonesProf)
 
 
 def update(dictDest, dictSrc):

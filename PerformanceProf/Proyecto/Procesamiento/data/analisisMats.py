@@ -27,8 +27,8 @@ for clave in dicProfs.keys():
         print(clave)
 print(dicProfs["DAVID ALONSO JURADO MOSQUERA"])
 """
-
-top = 10
+print(dicMaterias)
+top = 151
 cc = 0
 listaT = ["joy", "fear", "sadness", "anger", "confident", "analytical", "tentative"]
 fn.presentRankingProf(listaT, top, dicMaterias, "top_materias")

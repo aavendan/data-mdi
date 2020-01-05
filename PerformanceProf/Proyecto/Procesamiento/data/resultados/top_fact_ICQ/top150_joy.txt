@@ -1,0 +1,38 @@
+ingGroupException": exceptions.InvalidAutoScalingGroupException,
+        "InvalidApplicationNameException": exceptions.InvalidApplicationNameException,
+        "DescriptionTooLongException": exceptions.DescriptionTooLongException,
+        "ApplicationAlreadyExistsException": exceptions.ApplicationAlreadyExistsException,
+        "InvalidDeployedStateFilterException": exceptions.InvalidDeployedStateFilterException,
+        "DeploymentNotStartedException": exceptions.DeploymentNotStartedException,
+        "DeploymentConfigInUseException": exceptions.DeploymentConfigInUseException,
+        "InstanceIdRequiredException": exceptions.InstanceIdRequiredException,
+        "InvalidKeyPrefixFilterException": exceptions.InvalidKeyPrefixFilterException,
+        "InvalidDeploymentStatusException": exceptions.InvalidDeploymentStatusException,
+    }
+
+
+    def __init__(self, **kwargs):
+        region = kwargs.pop('region', None)
+        if not region:
+            region = RegionInfo(self, self.DefaultRegionName,
+                                self.DefaultRegionEndpoint)
+
+        if 'host' not in kwargs or kwargs['host'] is None:
+            kwargs['host'] = region.endpoint
+
+        super(CodeDeployConnection, self).__init__(**kwargs)
+        self.region = region
+
+    def _required_auth_capability(self):
+        return ['hmac-v4']
+
+    def batch_get_applications(self, application_names=None):
+        """
+        Gets information about one or more applications.
+
+        :type application_names: list
+        :param application_names: A list of application names, with multiple
+            application names separated by spaces.
+
+        """
+      
