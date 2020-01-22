@@ -1,0 +1,14 @@
+**************************************************************
+400986694185111
+
+Hora Inicio|Hora Fin|Categoria|PolaridadPositiva|PolaridadNegativa|PolaridadNeutra
+0:0:0|0:21:0|Reportajes|44|28|6
+0:21:0|0:25:0|Comunicado oficial|50|34|6
+0:25:0|0:26:0|Manifestaciones|51|35|6
+0:26:0|0:35:0|Reportajes|56|47|6
+0:35:0|0:42:0|Manifestaciones|71|54|6
+0:42:0|1:4:0|Reportajes|90|77|9
+1:4:0|1:17:0|Comunicado oficial|103|95|10
+1:17:0|1:22:0|Reportajes|108|108|13
+1:22:0|1:28:0|Manifestaciones|115|111|14
+1:28:0|2:22:0|Reportajes|160|162|17
